@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Color Fool</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<title>ColorFool</title>
+
+<body id="back">
+  <audio loop id="myaud">
+    <source src="aud.ogg" type="audio/ogg">
+  </audio>
+  <audio id="crash">
+    <source src="b.ogg" type="audio/ogg">
+  </audio>
+  <div id="originalpage" style="display:none">
+    <div id="bar" style="width: 100%; margin-top: 5%;">
+      <div id="progress"></div>
+    </div>
+    <div id="counter">0</div>
+    <div class="parent" height="500px" margin="100px">
+      <div id="shape" class="child" style="display:flex; justify-content: center;align-items: center;">
+        <div alignment="center">
+          <center><button id="tap" onclick="move(), tapped()"> Tap to start</button></center>
+        </div>
+        <div id="game" style="justify-content: center; align-items:center;">
+          <center>
+            <p id="txt1">Square</p>
+            <p id="txt2"> is <br> </p>
+            <p id="txt3">red</p>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="parent" style="padding: 10px;" width="100%">
+      <div width="50%" style="padding: 20px;" class="parent">
+        <button id="wrong" onclick="wrong()">&times;</button>
+      </div>
+      <div width="50%" class="parent" style="padding: 20px;">
+        <button id="correct" onclick="correct()">✓</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div id="menupage" style="display:block">
+    <center>
+      <button id="begin" onclick="showoriginal()">Start</button><br>
+      <button id="begin" onclick="showlevel()">Level</button><br>
+      <button id="begin" onclick="showhigh()">High Score</button><br>
+      <button id="begin" onclick="showabout()">Help</button><br>
+    </center>
+  </div>
+
+  <div id="aboutpage" style="display:none">
+    <pre>
+Rules to play:
+* If shape as well as color both matches 
+  click ✓.
+  
+* If either shape or color do not match 
+  click &times;.
+
+             Developed by:
+             
+             Dashrath Paswan
+</pre>
+    <center><button id="hm" onclick="showmenu()">Home</button></center>
+
+  </div>
+  <div id="lostpage" style="display:none;z-index:5">
+    <div>
+      <h1 style="font-family: Times-new-roman;">
+        <center>Game Over<br>Try Again</center>
+      </h1>
+    </div>
+    <div id="lost2">
+      <button id="lossb" onclick="home()">Home</button>
+      <button id="lossb" onclick="scrd()">Score</button>
+      <div id="divs"><br>
+        <h3 id="scr"></h3>
+      </div>
+    </div>
+  </div>
+  <div id="highscore" style="display:none">
+    <h1>
+      <center>High Score</center>
+    </h1>
+    <hr>
+    <center>
+      <h2>
+        <p id="highsc"></p>
+      </h2>
+    </center>
+    <center><button id="hm" onclick="showmenu()">Home</button></center>
+  </div>
+  <div id="levelpage" style="display:none">
+    <center><button id="lm" onclick="easy()">Easy</button></center>
+    <center><button id="lm" onclick="hard()">Hard</button></center>
+    <center><button id="lm" onclick="auto()">Auto</button></center>
+  </div>
+  <br><br><br>
+  <div>
+    <p id="aa" style="z-index:4; position:relative; top:150px"></p>
+  </div>
+</body>
+
+</html>
